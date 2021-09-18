@@ -11,8 +11,8 @@ const Card = (props) => {
       </div>
       <div className = "card__item-2"> 
         <h2 className="card__item-2__name"> {name} </h2>
-        <h4 className="card__item-2__first-brewed"> First Brewed: {firstBrewed} </h4>
-        <h3 className="card__item-2__tagline"> {tagline}</h3>
+        <p className="card__item-2__first-brewed"> First Brewed: {firstBrewed} </p>
+        <h4 className="card__item-2__tagline"> {tagline}</h4>
         <p className="card__item-2__description"> {description} </p>
       </div> 
     </div>
