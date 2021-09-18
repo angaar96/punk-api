@@ -1,0 +1,13 @@
+.navbar {
+  // grid-column: 1 / 1;
+  // grid-row: 1 / 2;
+  border-right: 2px solid brown; 
+  &__form {
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: space-around;
+    height: 30vh; 
+  }
+  
+}
