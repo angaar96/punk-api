@@ -4,13 +4,17 @@ const Card = (props) => {
   const {name, tagline, firstBrewed, description, abv, pH, imageUrl} = props;
   return (    
     <div className="card">
-      <h1 className="card__name"> {name} </h1>
-      <img className="card__img" src = {imageUrl} alt="beer" />
-      <h3 className="card__tagline"> {tagline}</h3>
-      <h3 className="card__first-brewed"> First Brewed: {firstBrewed} </h3>
-      <p className="card__description"> Description: {description} </p>
-      <p className="card__abv"> abv: {abv} </p>
-      <p className="card__ph"> pH: {pH} </p> 
+      <div className="card__item-1">
+        <img className="card__item-1__img" src = {imageUrl} alt="beer" />
+        <p className="card__item-1__abv"> abv: {abv} </p>
+        <p className="card__item-1__ph"> pH: {pH} </p> 
+      </div>
+      <div className = "card__item-2"> 
+        <h2 className="card__item-2__name"> {name} </h2>
+        <h4 className="card__item-2__first-brewed"> First Brewed: {firstBrewed} </h4>
+        <h3 className="card__item-2__tagline"> {tagline}</h3>
+        <p className="card__item-2__description"> {description} </p>
+      </div> 
     </div>
   )
 }

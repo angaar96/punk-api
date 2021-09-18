@@ -15,8 +15,7 @@ const App = () => {
   useEffect(fetchBeerData, [])
   const searchForBeer = (e) => {
     e.preventDefault(); 
-    fetchBeerData();
-    beerData && setSearchResults(beerData.filter(beer => beer.name.includes(e.target.value)));
+    e.target.value ? setSearchResults(beerData.filter(beer => beer.name.includes(`${e.target.value[0].toUpperCase()}${e.target.value.split("").splice(1, e.target.value.length).join("")}`))) : setSearchResults(searchResults => searchResults = []); 
   }
 
   return (

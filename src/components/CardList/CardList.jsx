@@ -4,7 +4,7 @@ import "./CardList.scss"
 
 const CardList = (props) => {
   const { beerData, searchResults } = props; 
-  const cardArr = searchResults ? searchResults.map(beer => { return (
+  const cardArr = searchResults.length > 0 ? searchResults.map(beer => { return (
   <Card
   searchResults = {searchResults} 
   name={beer.name} 
@@ -19,7 +19,7 @@ const CardList = (props) => {
       <Card
       name={beer.name} 
       imageUrl = {beer.image_url}
-      tagline={beer.tagline} 
+      tagline= {beer.tagline} 
       firstBrewed = {beer.first_brewed} 
       description = {beer.description} 
       abv = {beer.abv} 
@@ -27,7 +27,7 @@ const CardList = (props) => {
     )}) : [];
   return (
     <div className="card-list">
-      {searchResults ? cardArr : beerData ? cardArr : []}
+      {cardArr}
     </div>
   )
 }
