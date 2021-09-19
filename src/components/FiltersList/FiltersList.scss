@@ -5,5 +5,12 @@
   text-align: left; 
   align-items: center; 
   justify-items: left; 
-  grid-gap: 10px;    
+  grid-gap: 10px;
+  font-size: 20px;     
 } 
+
+@media screen and (max-width: 1200px) {
+  .filters {
+    font-size: 15px; 
+  }
+}
