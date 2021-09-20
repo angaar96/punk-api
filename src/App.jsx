@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar/Navbar";
 const App = () => {
   const [beerData, setBeerData] = useState(""); 
   const [searchResults, setSearchResults] = useState(""); 
+  
   const fetchBeerData = () => {
     fetch("https://api.punkapi.com/v2/beers")
     .then(response => response.json())
@@ -21,21 +22,25 @@ const App = () => {
     e.target.value ? setSearchResults(beerData.filter(beer => beer.name.includes(`${e.target.value[0].toUpperCase()}${e.target.value.split("").splice(1, e.target.value.length).join("")}`))) : setSearchResults(searchResults => searchResults = []); 
   }
 
-  const filterBeersAbv = (e) => {
-    e.target.checked ? setBeerData(beerData.filter(beer => beer.abv > 6)) : fetchBeerData();
-  }
-
-  const filterBeersClassic = (e) => {
-    e.target.checked ? setBeerData(beerData.filter(beer => parseInt(beer.first_brewed.split("/")[1]) < 2010)) : fetchBeerData();
-  }
-
-  const filterBeersAcidic = (e) => {
-    e.target.checked ? setBeerData(beerData.filter(beer => beer.ph < 4)) : fetchBeerData(); 
+  const filterBeers = (e) => {
+    switch(e.target.value) {
+      case "abv":
+        e.target.checked ? setBeerData(beerData.filter(beer => beer.abv > 6)) : fetchBeerData();
+        break;
+      case "classic":
+        e.target.checked ? setBeerData(beerData.filter(beer => parseInt(beer.first_brewed.split("/")[1]) < 2010)) : fetchBeerData();
+        break;
+      case "acidic":
+        e.target.checked ? setBeerData(beerData.filter(beer => beer.ph < 4)) : fetchBeerData(); 
+        break;
+      default:
+        break; 
+    }
   }
 
   return (
     <div className="App">
-      <Navbar searchForBeer={searchForBeer} filterBeersAbv = {filterBeersAbv} filterBeersClassic = {filterBeersClassic} filterBeersAcidic = {filterBeersAcidic} />
+      <Navbar searchForBeer={searchForBeer} filterBeers={filterBeers} />
       <Main searchResults={searchResults} beerData = {beerData} />
     </div>
   );
