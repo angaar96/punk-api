@@ -9,7 +9,8 @@
   box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
   background: linear-gradient(#0B4284, #0B4284) padding-box, linear-gradient(#008000, #1178c3) border-box; 
   border: 4px solid transparent;  
-  padding: 10px;    
+  padding: 10px; 
+  margin-top: 10px;    
   &__item-1 {
     display: flex; 
     flex-direction: column;
