@@ -8,17 +8,14 @@
 
 .App {
   display: grid; 
-  grid-template-columns: 1fr 5fr;
-  grid-template-rows: 1fr;  
-  width: 100vw;
-  height: 100vh;
+  grid-template-columns: 1fr 4fr;   
+  max-width: 100%;
   column-gap: 20px; 
-  background-color: #80AFCD;
+  background: #80AFCD;
 }
 
 @media screen and (max-width: 1200px) {
   .App {
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 5fr; 
+    grid-template-columns: auto;
   } 
 }

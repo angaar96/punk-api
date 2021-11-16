@@ -1,19 +1,25 @@
 .navbar {
   background: #D17B1C;
-  border-right: 3px solid black; 
+  border-right: 3px solid black;
+  padding: 10px; 
   &__form {
     display: flex; 
     flex-direction: column; 
     align-items: center; 
-    justify-content: space-around;
-    height: 50vh;
+    justify-content: space-evenly;
+    min-height: 100vh;
+    &__input {
+      width: 80%; 
+    }
     &__input-label {
       font-size: 40px;
       font-weight: bolder;  
       text-align: center;  
     }
     &__filters-label {
-      font-size: 30px; 
+      font-size: 30px;
+      text-align: center; 
+      margin-bottom: 10px;  
     }
   }
 }
@@ -22,19 +28,25 @@
   .navbar {
     border-right: none; 
     border-bottom: 1px solid black; 
+    // height:20vh; 
   }
   .navbar__form {
-    height: auto;
+    min-height: auto;
     padding: 10px;   
-    width: 100vw; 
-    justify-content: space-between; 
+    width: 100%; 
+    justify-content: center; 
     align-items: center;
-    border-bottom: 1px solid black; 
+    &__input {
+      width: 50%; 
+    }
     &__input-label {
+      margin-bottom: 10px; 
       font-size: 20px; 
       text-align: left; 
     }
     &__filters-label {
+      margin-bottom: 10px; 
+      margin-top: 10px; 
       font-size: 18px; 
     }
   }
